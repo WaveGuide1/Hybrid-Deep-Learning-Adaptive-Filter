@@ -22,12 +22,4 @@ def download_dataset(dataset_names, path):
 
 if __name__ == "__main__":
     # ECG dataset
-    # download_dataset("shayanfazeli/heartbeat", "data/ecg")
-
-    # Vibration dataset
-    # download_dataset("dnkumars/industrial-equipment-monitoring-dataset", "data/vibration")
-
-    # Audio dataset
-    # download_dataset("chrisfilo/urbansound8k", "data/audio")
-
-    pass
+    download_dataset("shayanfazeli/heartbeat", "data/ecg")
