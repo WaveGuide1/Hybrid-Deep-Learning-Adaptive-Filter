@@ -1,4 +1,3 @@
-data/audio
+data/processed
 data/ecg
-data/vibration
 env
