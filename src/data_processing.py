@@ -82,7 +82,7 @@ class DataProcessor:
 
 if __name__ == "__main__":
     raw_data_path = "data/ecg"          
-    processed_data_path = "data/processed"
+    processed_data_path = "data/processed_data"
 
     processor = DataProcessor(raw_data_path, processed_data_path)
     processor.process_dataset()

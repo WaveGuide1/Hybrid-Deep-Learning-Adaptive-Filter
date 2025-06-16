@@ -35,7 +35,7 @@ class NoiseInjector:
 
 
 if __name__ == "__main__":
-    processed_data_path = "data/processed"
+    processed_data_path = "data/processed_data"
     injector = NoiseInjector(processed_data_path)
     
     injector.generate_noisy_dataset("train")
