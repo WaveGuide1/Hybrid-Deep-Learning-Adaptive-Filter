@@ -1,6 +1,6 @@
 import os
 import numpy as np
-import pandas as pd
+import pandas as pd # type: ignore
 
 class DataProcessor:
     def __init__(self, raw_data_path, processed_data_path, window_size=128, overlap=0.5):
