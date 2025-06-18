@@ -45,7 +45,7 @@ py::array_t<double> nlms_filter(py::array_t<double> input_array,
             norm_x += x[k] * x[k];
         }
 
-        // Update weights
+        // Update weight
         for (int k = 0; k < filter_order; k++) {
             weights[k] += (mu * e * x[k]) / norm_x;
         }
