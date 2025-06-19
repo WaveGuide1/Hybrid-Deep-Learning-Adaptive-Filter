@@ -17,7 +17,7 @@ class NoiseInjector:
         return clean_signal + noise
     
     def generate_noisy_dataset(self, dataset_type):
-        clean_path = os.path.join(self.processed_dir, f"{dataset_type}_segments.npy")
+        clean_path = os.path.join(self.processed_dir, f"{dataset_type}_normalized.npy")
         clean_data = np.load(clean_path)
 
         for snr in self.snr_levels:
