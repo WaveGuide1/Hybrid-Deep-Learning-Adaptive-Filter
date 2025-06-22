@@ -1,3 +1,4 @@
 data/
 data/ecg
 env
+experiments/cnn_*
