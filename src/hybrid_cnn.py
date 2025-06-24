@@ -1,5 +1,3 @@
-# File: src/hybrid_cnn.py
-
 import torch
 import torch.nn as nn
 
@@ -29,7 +27,6 @@ class HybridCNN(nn.Module):
 
     def forward(self, x):
         
-        x = x.unsqueeze(1)
         x = self.cnn(x)
         x = self.flatten(x)
         x = self.fc(x)
