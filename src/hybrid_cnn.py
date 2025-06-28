@@ -1,37 +1,36 @@
 import torch
 import torch.nn as nn
+import torch.nn.init as init
 
 class HybridCNN(nn.Module):
-    """Hybrid CNN model for processing 1D time series data.
+    """
+    Simple and Fast 1D CNN for ECG Denoising
     """
     def __init__(self):
         super(HybridCNN, self).__init__()
         
-        self.cnn = nn.Sequential(
-            nn.Conv1d(in_channels=1, out_channels=16, kernel_size=5, stride=1),
-            nn.BatchNorm1d(16),
+        self.net = nn.Sequential(
+            nn.Conv1d(1, 32, kernel_size=7, padding=3),
             nn.ReLU(),
-            nn.MaxPool1d(kernel_size=2),
-
-            nn.Conv1d(in_channels=16, out_channels=8, kernel_size=3, stride=1),
-            nn.BatchNorm1d(8),
-            nn.ReLU()
-        )
-
-        self.flatten = nn.Flatten()
-        self.fc = nn.Sequential(
-            nn.Linear(8 * 89, 128),
+            
+            nn.Conv1d(32, 64, kernel_size=5, padding=2),
             nn.ReLU(),
-            nn.Linear(128, 187)
+            
+            nn.Conv1d(64, 32, kernel_size=3, padding=1),
+            nn.ReLU(),
+            
+            nn.Conv1d(32, 1, kernel_size=1)
         )
-
-    def forward(self, x):
         
-        x = self.cnn(x)
-        x = self.flatten(x)
-        x = self.fc(x)
-        return x
-
-if __name__ == "__main__":
-    model = HybridCNN()
-    print(model)
+        
+        self._initialize_weights()
+        
+    def _initialize_weights(self):
+        for m in self.modules():
+            if isinstance(m, nn.Conv1d):
+                init.xavier_uniform_(m.weight)
+                if m.bias is not None:
+                    init.constant_(m.bias, 0)
+        
+    def forward(self, x):
+        return self.net(x).squeeze(1)
