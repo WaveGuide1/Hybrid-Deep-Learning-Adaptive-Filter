@@ -1,5 +1,4 @@
 import numpy as np
-import time
 import torch
 
 """
@@ -16,18 +15,6 @@ MSE Calculation
 """
 def calculate_mse(clean, denoised):
     return np.mean((clean - denoised) ** 2)
-
-"""
-Inference Time
-"""
-def measure_inference_time(hybrid_system, noisy_batch, desired_batch):
-    start = time.time()
-    _ = hybrid_system.batch_hybrid_filter(noisy_batch, desired_batch)
-    end = time.time()
-    
-    total_time = end - start
-    avg_time_per_sample = total_time / len(noisy_batch)
-    return avg_time_per_sample * 1000
 
 """
 FLOPs Estimation (Simple Rough Estimate)
