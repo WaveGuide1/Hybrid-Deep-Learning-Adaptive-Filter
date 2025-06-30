@@ -10,7 +10,9 @@ from torch.utils.data import TensorDataset, DataLoader
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from src.hybrid_cnn import HybridCNN
 
-"""Configurations"""
+"""
+Configurations
+"""
 processed_dir = "data/processed_data"
 noisy_data_dir = os.path.join(processed_dir, "noisy")
 save_model_path = "experiments/cnn_model.pth"
@@ -45,7 +47,9 @@ ranges_c = max_vals_c - min_vals_c
 ranges_c[ranges_c == 0] = 1
 train_clean = 2 * (clean_data - min_vals_c) / ranges_c - 1
 
-"""Create tensors and DataLoader"""
+"""
+Create tensors and DataLoader
+"""
 log("Creating DataLoader...")
 train_clean_tensor = torch.tensor(train_clean, dtype=torch.float32)
 train_noisy_tensor = torch.tensor(train_noisy, dtype=torch.float32).unsqueeze(1)

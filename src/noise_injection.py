@@ -8,7 +8,7 @@ class NoiseInjector:
         self.snr_levels = snr_levels
         self.noisy_data_path = os.path.join(processed_data_path, "noisy")
         os.makedirs(self.noisy_data_path, exist_ok=True)
-
+    """Adds additive white Gaussian noise to a clean signal based on the target SNR in dB."""
     def additive_white_gaussian_noise(self, clean_signal, target_snr_db):
         signal_power = np.mean(clean_signal**2)
         snr_linear = 10**(target_snr_db / 10)
