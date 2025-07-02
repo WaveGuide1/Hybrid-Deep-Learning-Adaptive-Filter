@@ -15,7 +15,7 @@ class NoiseInjector:
         noise_power = signal_power / snr_linear
         noise = np.random.normal(0, np.sqrt(noise_power), clean_signal.shape)
         return clean_signal + noise
-    
+    """ Generates noisy datasets for training and testing by applying AWGN at specified SNR levels."""
     def generate_noisy_dataset(self, dataset_type):
         clean_path = os.path.join(self.processed_dir, f"{dataset_type}_normalized.npy")
         clean_data = np.load(clean_path)
