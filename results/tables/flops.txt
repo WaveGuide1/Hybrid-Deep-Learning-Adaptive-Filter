@@ -1,0 +1,2 @@
+CNN FLOPs: 119867
+Device: cpu
