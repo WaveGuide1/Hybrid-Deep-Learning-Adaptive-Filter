@@ -7,10 +7,10 @@ The demand for real-time signal processing in embedded systems, particularly for
 
 ## The implementation includes:
 
--  **Hybrid CNN architecture** optimized for real-time ECG denoising
--  **NLMS adaptive filter** implementation with configurable parameters
-- ⚡ **Performance benchmarking** across multiple noise levels (SNR 0-20dB)
-- 📊 **Visualization tools** for qualitative and quantitative analysis
+- **Hybrid CNN architecture** optimized for real-time ECG denoising
+- **NLMS adaptive filter** implementation with configurable parameters
+- **Performance benchmarking** across multiple noise levels (SNR 0-20dB)
+- **Visualization tools** for qualitative and quantitative analysis
 
 The CNN model demonstrates **>10× speedup** compared to NLMS while maintaining superior denoising performance across all tested SNR levels.
 
@@ -36,3 +36,5 @@ source ecg-env/bin/activate  # Linux/Mac
 
 # Install dependencies
 pip install -r requirements.txt
+
+```
