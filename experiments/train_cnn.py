@@ -48,7 +48,7 @@ ranges_c[ranges_c == 0] = 1
 train_clean = 2 * (clean_data - min_vals_c) / ranges_c - 1
 
 """
-Create tensors and DataLoader
+Create tensors and DataLoader for training
 """
 log("Creating DataLoader...")
 train_clean_tensor = torch.tensor(train_clean, dtype=torch.float32)
@@ -90,7 +90,7 @@ for epoch in range(epochs):
     epoch_loss /= len(train_loader)
     log(f"Epoch [{epoch+1}/{epochs}] - Loss: {epoch_loss:.6f}")
 
-"""Save model"""
+"""Save model state"""
 os.makedirs("experiments", exist_ok=True)
 torch.save(model.state_dict(), save_model_path)
 training_time = (time.time() - start_time) / 60
