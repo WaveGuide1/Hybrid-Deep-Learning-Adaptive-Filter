@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Comparative Evaluation of Deep Learning and NLMS Adaptive Filtering for ECG Denoising in Resource Constrained Environments"
+abstract: "This study presents a comparative evaluation of two distinct approaches to ECG signal denoising: Normalized Least Mean Squares (NLMS) adaptive filtering and a lightweight Convolutional Neural Network (CNN)."
+authors:
+  - family-names: Alaekwe
+    given-names: Bartholomew C.
+    orcid: https://orcid.org/0009-0002-6775-781X
+type: preprint
+doi: 10.36227/techrxiv.175427193.38155866/v1
+date-released: 2025-08-04
+repository-code: https://github.com/WaveGuide1/Hybrid-Deep-Learning-Adaptive-Filter
