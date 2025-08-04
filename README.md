@@ -1,5 +1,18 @@
 # Comparative Evaluation of Deep Learning and NLMS Adaptive Filtering for ECG Denoising in Resource Constrained Environments.
 
+[![DOI](https://img.shields.io/badge/Preprint-TechRxiv-blue)](https://doi.org/10.36227/techrxiv.175427193.38155866/v1)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0002--6775--781X-green)](https://orcid.org/0000-0002-6775-781X)
+
+Official implementation for our TechRxiv preprint:  
+**"Comparative Evaluation of Deep Learning and NLMS Adaptive Filtering for ECG Denoising in Resource Constrained Environments"**
+
+> **Key Findings**:  
+> - CNN achieves 14.88 dB SNR at 20 dB input (vs NLMS: 1.64 dB)  
+> - Requires 239× more FLOPs than NLMS (119K vs 500)  
+> - Maintains 96.7% R-peak accuracy (±5 samples)
+
+[Read Preprint](https://doi.org/10.36227/techrxiv.175427193.38155866/v1) | [View on ORCID](https://orcid.org/0009-0002-6775-781X)
+
 ![ECG Denoising Results](results/figures/)
 
 ## Abstract
